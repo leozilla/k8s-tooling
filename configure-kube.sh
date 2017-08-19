@@ -13,3 +13,5 @@ kubectl config set current-context [ minikube ]
 kubectl config set users.name minikube
 kubectl config set users.user.client-certificate ~/.minikube/apiserver.crt
 kubectl config set users.user.client-key ~/.minikube/apiserver.key
+
+kubectl config set-context minikube
