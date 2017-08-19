@@ -35,10 +35,20 @@ do
   sleep 2
 done
 
+
+
 # kubectl commands are now able to interact with minikube cluster
 
 case "$1" in
     -p)
+        registry=$(kubectl get po -n kube-system | grep kube-registry-v0 | awk '{print $1;}')
+
+        if [ $registry ]; then
+            echo $registry
+        else
+            kubectl create -f kube-registry.yaml
+        fi
+
         sleep 10
 
         # see https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615
