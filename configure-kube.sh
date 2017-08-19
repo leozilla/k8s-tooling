@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp -R ./minikube ~/.minikube/
+cp -R .minikube ~/.minikube/
 
 kubectl config set clusters.cluster.certificate-authority ~/.minikube/ca.crt
 kubectl config set clusters.cluster.server https://192.168.99.101:8443
