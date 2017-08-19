@@ -37,7 +37,7 @@ touch $HOME/.kube/config
 
 export KUBECONFIG=$HOME/.kube/config
 if [ "$(sudo -E minikube status | head -n 1 )" != "minikube: Running" ]; then
-    sudo -E minikube start --vm-driver=none
+    minikube start
 fi
 
 # this for loop waits until kubectl can access the api server that minikube has created
