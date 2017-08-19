@@ -36,7 +36,7 @@ mkdir $HOME/.kube || true
 touch $HOME/.kube/config
 
 export KUBECONFIG=$HOME/.kube/config
-if [ "$(sudo -E minikube status | head -n 1 )" != "minikube: Running" ]; then
+if [ "$(minikube status | head -n 1 )" != "minikube: Running" ]; then
     minikube start
 fi
 
